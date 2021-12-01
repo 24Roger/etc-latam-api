@@ -2,7 +2,7 @@ import dotenv from 'dotenv';
 
 const notFound = dotenv.config();
 
-if (notFound.error) {
+if (!notFound) {
     throw new Error('Could not find .env file');
 }
 
@@ -12,5 +12,8 @@ export default {
     port: process.env.PORT || 4000,
     log: {
         level: process.env.LOG_LEVEL,
+    },
+    api: {
+        prefix: '/api/v1'
     }
 };
