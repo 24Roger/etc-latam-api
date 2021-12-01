@@ -1,0 +1,37 @@
+{
+  "name": "etc-latam-api",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "babel src --out-dir build --copy-files",
+    "dev": "nodemon --exec babel-node src/index.js",
+    "lint": "eslint src --fix",
+    "start": "node build/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/24Roger/etc-latam-api.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/24Roger/etc-latam-api/issues"
+  },
+  "homepage": "https://github.com/24Roger/etc-latam-api#readme",
+  "devDependencies": {
+    "@babel/cli": "^7.16.0",
+    "@babel/core": "^7.16.0",
+    "@babel/node": "^7.16.0",
+    "@babel/preset-env": "^7.16.4",
+    "eslint": "^8.3.0",
+    "nodemon": "^2.0.15"
+  },
+  "dependencies": {
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "morgan": "^1.10.0",
+    "winston": "^3.3.3"
+  }
+}
