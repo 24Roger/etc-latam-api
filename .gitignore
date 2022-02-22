@@ -1,3 +1,4 @@
 .env
+.devcontainer
 build
 node_modules
