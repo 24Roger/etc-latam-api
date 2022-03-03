@@ -22,13 +22,12 @@ export const getAllRoles = async (req, res, next) => {
  */
 
 export const newRol = async (req, res, next) => {
-    try {
-        const { rol, description } = req.body;
+    const { rol, description } = req.body;
 
+    try {
         const response = await createRol({ rol, description });
 
         res.json(response);
-
     } catch (error) {
         next(error);
     }

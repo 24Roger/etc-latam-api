@@ -1,6 +1,6 @@
-import dotenv from 'dotenv';
+import { config } from 'dotenv';
 
-const notFound = dotenv.config();
+const notFound = config();
 
 if (!notFound) {
     throw new Error('Could not find .env file');
@@ -23,5 +23,9 @@ export default {
         host: process.env.DATABASE_HOST,
         dialect: process.env.DATABASE_DIALECT,
         port: process.env.DATABASE_PORT
-    }
+    },
+    auth: {
+        secret: process.env.AUTH_SECRET,
+        ttl: process.env.AUTH_TTL
+    },
 };

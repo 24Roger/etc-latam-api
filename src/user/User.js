@@ -33,8 +33,12 @@ const User = sequelize.define(
             defaultValue: 1,
             allowNull: false,
         },
+        enable: {
+            type: DataTypes.BOOLEAN,
+            allowNull: false,
+            defaultValue: true,
+        },
         last_connection: {
-
             type: DataTypes.DATEONLY,
         },
         question_answered: {
@@ -63,7 +67,7 @@ const User = sequelize.define(
         },
         modification_date: {
             type: DataTypes.DATEONLY,
-        }
+        },
     }
 );
 
