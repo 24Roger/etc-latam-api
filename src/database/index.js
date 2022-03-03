@@ -10,7 +10,12 @@ const sequelize = new Sequelize(
         host: config.dataBase.host,
         dialect: config.dataBase.dialect,
         port: config.dataBase.port,
-        dialectOptions: {}
+        dialectOptions: {
+            ssl: {
+                require: true,
+                rejectUnauthorized: false
+            }
+        }
     }
 );
 
