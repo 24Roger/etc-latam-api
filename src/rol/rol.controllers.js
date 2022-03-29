@@ -1,5 +1,5 @@
 import { Request, Response } from 'express';
-import { createRol, findAllRoles } from './services';
+import { createRol, findAllRoles } from './rol.services';
 
 /**
  * @param {Request} req

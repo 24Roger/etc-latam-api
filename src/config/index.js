@@ -26,6 +26,16 @@ export default {
     },
     auth: {
         secret: process.env.AUTH_SECRET,
-        ttl: process.env.AUTH_TTL
+        ttl: process.env.AUTH_TTL,
+        ttlReset: process.env.AUTH_TTL_RESET,
+        secretReset: process.env.AUTH_SECRET_RESET,
     },
+    nodeMailer: {
+        host: process.env.EMAIL_HOST,
+        port: process.env.EMAIL_PORT,
+        secure: process.env.EMAIL_SECURE,
+        user: process.env.EMAIL_USER,
+        password: process.env.EMAIL_PASSWORD,
+        portClient: process.env.PORT_CLIENT
+    }
 };

@@ -11,10 +11,10 @@ const sequelize = new Sequelize(
         dialect: config.dataBase.dialect,
         port: config.dataBase.port,
         dialectOptions: {
-            ssl: {
-                require: true,
-                rejectUnauthorized: false
-            }
+            /*ssl: {
+                 require: true,
+                 rejectUnauthorized: false
+             }*/
         }
     }
 );
@@ -24,7 +24,7 @@ const connect = async () => {
 
     try {
         await sequelize.authenticate();
-
+        //sequelize.sync({ force: true });
         logger.info('Connection has been established successfully.');
     } catch (error) {
         logger.error('Unable to connect to the database:', error);

@@ -1,6 +1,6 @@
 import sequelize from '../database';
 import { DataTypes } from 'sequelize';
-import Rol from '../rol/Rol';
+import Rol from '../rol/rol.model';
 
 const User = sequelize.define(
     'user',
@@ -38,6 +38,9 @@ const User = sequelize.define(
             allowNull: false,
             defaultValue: true,
         },
+        resetToken:{
+            type: DataTypes.STRING(255),
+        },
         last_connection: {
             type: DataTypes.DATEONLY,
         },
@@ -58,15 +61,6 @@ const User = sequelize.define(
         modified_by: {
             type: DataTypes.INTEGER,
             allowNull: true,
-        },
-        creation_date: {
-            required: true,
-            type: DataTypes.DATEONLY,
-            allowNull: false,
-            defaultValue: Date.now()
-        },
-        modification_date: {
-            type: DataTypes.DATEONLY,
         },
     }
 );

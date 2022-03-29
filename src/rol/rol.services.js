@@ -1,4 +1,4 @@
-import RolRepository from './repository';
+import RolRepository from './rol.repository';
 
 const rolRepository = new RolRepository();
 

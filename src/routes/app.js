@@ -3,8 +3,8 @@ import morgan from 'morgan';
 import cors from 'cors';
 import { notFound, errorHandler } from '../errors/error';
 import config from '../config';
-import user from '../user/routes';
-import rol from '../rol/routes';
+import user from '../user/user.routes';
+import rol from '../rol/rol.routes';
 
 const app = express();
 

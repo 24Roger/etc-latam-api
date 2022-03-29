@@ -1,5 +1,5 @@
 import { Request, Response } from 'express';
-import { findAllUsers } from './services';
+import { findAllUsers } from './user.services';
 
 /**
  * @param {Request} req

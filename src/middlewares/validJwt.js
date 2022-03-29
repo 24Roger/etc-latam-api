@@ -1,4 +1,4 @@
-import { validToken } from '../auth/services';
+import { validToken } from '../auth/auth.services';
 
 const validJwt = async (req, res, next) => {
     try {

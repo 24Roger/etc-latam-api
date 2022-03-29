@@ -1,6 +1,6 @@
-import { check, body } from 'express-validator';
+import { check, body, header } from 'express-validator';
 import validResult from '../middlewares/validResult';
-import { findUserByEmail } from '../user/services';
+import { findUserByEmail } from '../user/user.services';
 import AppError from '../errors/appError';
 
 const userRequired = check('user', 'El usuario es requerido').not().isEmpty();
@@ -25,6 +25,8 @@ const passwordRequired = check('password', 'La contraseña es requerida').not().
 
 const passwordValid = body('password').trim().isLength({ min: 8, max: 50 }).withMessage('La contraseña debe tener entre 8 y 50 caracteres').isStrongPassword().withMessage('La contraseña es debil');
 
+const resetRequired = header('reset', 'El reset es requerido').not().isEmpty();
+
 export const registerValidator = [
     userRequired,
     userValid,
@@ -43,3 +45,17 @@ export const loginValidator = [
     passwordValid,
     validResult
 ];
+
+export const changeRequestPasswordValidator = [
+    emailRequired,
+    emailValid,
+    validResult
+];
+
+export const newPasswordValidator = [
+    passwordRequired,
+    passwordValid,
+    resetRequired,
+    validResult
+];
+
